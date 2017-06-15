@@ -1,0 +1,70 @@
+/*默认字体大小18px*/
+*{
+    font-size:.14rem;
+}
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img,button,input {
+    margin: 0;
+    padding: 0;
+}
+button{
+    border:0;
+}
+li a{
+    width:100%;
+}
+a{
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    height:100%;
+    color: #fff;
+}
+input[type="button"],button{
+    border-radius: 5px;
+}
+fieldset,img {
+    border: 0
+}
+img {
+    display: block
+}
+address,caption,cite,code,dfn,th,var {
+    font-style: normal;
+    font-weight: normal
+}
+ul,ol {
+    list-style: none
+}
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun","宋体"
+}
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+select,input {
+    vertical-align: middle
+}
+select,input,textarea {
+    font-size: .12rem;
+    margin: 0
+}
+input[type="text"],input[type="password"],textarea {
+    outline-style: none;
+    -webkit-appearance: none
+}
+textarea {
+    resize: none
+}
+table {
+    border-collapse: collapse
+}
+h3{
+    font-size:18px;
+    font-weight: normal;
+}
+button,input[type="button"]{
+    color:#fff;
+}

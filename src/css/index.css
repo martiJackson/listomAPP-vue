@@ -1,0 +1,542 @@
+/*字体图标样式*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.eot');
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../font/iconfont.woff') format('woff'),
+  url('../font/iconfont.ttf') format('truetype'),
+  url('../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-shangjiantou:before { content: "\f034d"; }
+
+.icon-xiajiantou:before { content: "\f034e"; }
+
+.icon-bottom:before { content: "\e674"; }
+
+.icon-top:before { content: "\e676"; }
+
+.userName>.white{
+	color: white;
+	top:.1rem;
+	right:.5rem;
+}
+/*头部样式*/
+#DInput{
+	margin-left: .2rem
+}
+.head{
+	width:100%;
+	height:60px;
+	background: #324157;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+.head>div{
+	color: #fff;
+}
+.head>div:first-of-type{
+	margin-left: .56rem;
+}
+.head>div:last-of-type{
+	margin-right:.31rem; 
+}
+.logo>span{
+	font-size: .18rem;
+}
+.userName{
+	width:.9rem; 
+	cursor: pointer;
+}
+.userName>span{
+	font-size:.16rem;
+	width:1rem;
+	margin-left:-.2rem;
+}
+.changePassword{
+	position: absolute;
+	right:0;
+	width:.9rem;
+	margin-right:.31rem;
+	text-align:center;
+	display: none;
+	outline: 1px solid;
+	z-index: 100;
+}
+#changePassword{
+  display: inline-block;
+  width:100%;
+  height:100%;
+  background: #168bd9;
+  color: #fff;
+  cursor: pointer;
+}
+.changePassword>li{
+  background: #168bd9;
+  color: #fff;
+  border:1px solid gray;
+  cursor: pointer;
+}
+
+/*内容区*/
+.main{
+	width:18.7rem;
+	margin: .3rem .25rem;
+	font-size:0;
+	position: relative;
+}
+/*侧边导航栏*/
+
+.side{
+	width:3rem;
+	border:1px solid #838B8D;
+	display: inline-block;
+}
+.side>ul{
+	width:3rem;
+}
+.side>ul>li{
+	width:300px;
+	text-align: center;
+}
+
+/*主内容区*/
+
+.show{
+	width:15.2rem;
+	height:5rem;
+	outline: 1px solid;
+	display: inline-block;
+	position: absolute;
+	top:0;
+	margin-left:.5rem; 
+}
+
+/*部门列表*/
+.header{
+	width: 100%;
+}
+.header>h1{
+	height:.5rem;
+	width:15.2rem;
+	font-size:.24rem;
+	font-weight: bold;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+/*表格小标题公用样式*/
+.department{
+	font-size:0;
+}
+.title{
+	font-size:0;
+}
+.title>li{
+	height:.5rem;
+	display: inline-block;
+	outline: 1px solid;
+	text-align: center;
+	font-size: .16rem;
+	font-weight:bold;
+	line-height: .5rem;
+}
+.department>li{	
+	width:3.8rem;
+	height:.5rem;	
+	display: inline-block;
+	text-align: center;
+	line-height: .5rem;
+	font-size:.18rem;
+	font-weight: bold;
+	outline: 1px solid
+}
+.a>li{
+	float: left;
+	width:3.8rem;
+	height:.5rem;
+	text-align: center;
+	line-height:.5rem;
+	outline: 1px solid;
+}
+.a>li.b{
+	text-align: left;
+}
+.b>button{
+	width:1rem;
+	height:.4rem;
+	background: #169BD5;
+	color: #fff;
+	border-radius:5px;
+	margin-left:.2rem; 
+}
+.c{
+	display: none;
+}
+.A>p>span:first-of-type{
+	font-size:.2rem;
+	color: red;
+}
+.A>p>span:last-of-type{
+	font-size:.18rem;
+}
+.A>p>input{
+	width:6.5rem;
+	height:.5rem;
+	margin-left:.15rem; 
+}
+.A>input{
+	height:.4rem;
+	width:1.4rem;
+	background: #168bd9;
+	color: #fff;
+	text-align: center;
+	line-height: .4rem;
+	font-size:.18rem;
+	margin: .45rem 0 0 7.25rem;
+}
+.A>p{
+	margin:.3rem 0 0 2.25rem; 
+}
+.B>ul:first-of-type{
+	height:.8rem;
+	width:15.2rem;
+	outline: 1px solid;
+}
+.B>ul:first-of-type>li{
+	height:.8rem;
+	float: left;
+	margin-left:.2rem;
+	line-height: .8rem;
+}
+.B>ul>li>span{
+	font-size:.18rem;
+	font-weight: bold;
+}
+.B>ul>li>input{
+	width:1.6rem;
+	height:.3rem;
+	margin-left:.15rem 
+}
+.B>ul>li>button{
+	width:1rem;
+	height:.3rem;
+	background: #168bd9;
+	border-radius:5px; 
+}
+/*员工列表*/
+.employee{
+	height:.5rem;
+}
+.employee>li{
+	width:2.2rem;
+	height:.5rem;
+	float: left;
+	text-align: center;
+	line-height: .5rem;
+	font-size:.16rem;
+	font-weight: bold;
+	outline: 1px solid;
+}
+.employee>li:first-of-type{
+	width:2rem;
+}
+.C>p:not(:first-of-type){
+	margin-top:.3rem; 
+}
+.C>p:nth-child(n+5){
+	margin-left:2.65rem; 
+}
+.D>h2{
+	height:.5rem;
+	width:100%;
+	text-align:center;
+	font-size:.18rem;
+	line-height: .5rem;
+	border-bottom: 1px solid;
+}
+.D>p{
+	width:7.6rem;
+	height:1.2rem;
+	margin-left:.56rem;
+}
+.D>p>input[type="button"]{
+	margin-left:.15rem;
+	width:140px;
+	height:.4rem;
+	font-size:.16rem;
+	color: white;
+	background: #168bd9; 
+}
+.header>p.space{
+	margin-left:2.55rem;
+}
+.header>p.tips{
+	margin:.1rem 0 0 3.05rem;
+}
+/*机器列表*/
+#machine>li{
+	margin-left: 1rem;
+}
+#machine>li>input{
+	width:3rem;
+	height:.4rem;
+}
+#machine>li>input[type="button"]{
+	width:.8rem;
+	background: #169BD5;
+}
+#task>li>input{
+	width:2.5rem;
+}
+#task>li>input[type="button"]{
+	width:.8rem;
+	background: #169BD5;
+	border-radius: 5px;
+}
+#task>li{
+	margin-left: .5rem;
+}
+.task>li{
+	width:2.2rem;
+	height:.55rem;
+	display: inline-block;
+	text-align: center;
+	font-size: .16rem;
+	font-weight: bold;
+	outline: 1px solid;
+}
+.task>li:first-of-type{
+	width:2rem;
+}
+/*加工日报表*/
+.Processing>li{
+	width:1.3rem;
+	height:.5rem;
+	display: inline-block;
+	text-align: center;
+	font-size: .16rem;
+	font-weight:bold;
+	outline: 1px solid;
+}
+.Processing>li:nth-of-type(n+8){
+	width:1.2rem;
+}
+.Processing>li:last-of-type{
+	width:1.3rem;
+}
+
+/*办公模块*/
+#notice>li{	
+	width:3.04rem;	
+}
+.header>p.notice{
+	margin-left: 2.4rem;
+}
+
+/*一键办公*/
+.APP{
+	border:1px solid rgba(247,238,214,1);
+	padding-bottom:1rem;
+}
+
+.APP>li{
+	width:2.7rem;
+	display: inline-block;
+	margin:.5rem 0 0 .8rem;
+	text-align: center;
+	border:1px solid rgba(247,238,214,1);
+	padding-bottom:.2rem;
+}
+.APP>li>p{
+	text-align: center;
+}
+.APP>li>p>img{
+	width:1.5rem;
+	border-radius: 50%;
+	display: inline-block;
+}
+.APP>li>*{
+	text-align: center;
+	margin-top:.18rem;
+	font-size: .22rem;
+	font-weight:bold;
+}
+.APP>li>div.btn{
+	width:1rem;
+	height:.5rem;
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+}
+.btn>p{
+	width:1.5rem;
+	height:.5rem;
+	position: absolute;
+	left:0;
+	top:0;
+}
+.btn>p>button{
+	width:.5rem;
+	height:.5rem;
+	float: left;
+}
+.btn>p>button.blue{
+	background: #168bd9;
+}
+.btn>p>button.red{
+	background: red;
+	color: #fff;
+}
+.btn>p.Left{
+	left:-.5rem;
+}
+/*系统设置*/
+.Modify{
+	margin:.3rem 0 0 2.3rem; 
+}
+.Modify>span{
+	font-size:.16rem;
+}
+.Modify>input{
+	width:6.5rem;
+	height:.5rem;
+	margin-left: .1rem;
+}
+.long{
+	margin-left: 2.1rem;
+}
+.long>input{
+	width:3.1rem
+}
+
+.adress>div{
+	width:6.5rem;
+	height:2.5rem;
+	display: inline-block;
+}
+.header>input[type='button']{
+	width:1.4rem;
+	height:.4rem;
+	background:#169BD5;
+	margin:.45rem 0 .45rem 7.15rem;
+}
+
+
+/*渲染数据公用样式*/
+
+/*表格样式*/
+
+.page{	
+	position: absolute;
+	width:15.2rem;
+	font-size:0;
+	top:0;
+	right:.25rem;
+	overflow-x: hidden;
+}
+.page>.header>ul{
+	font-size: 0;
+}
+.data{
+  width:15.2rem;
+}
+.data>li{
+  height:.5rem;
+  outline:1px solid;
+  float:left;
+  text-align:center;
+  line-height:.5rem;
+}
+/*按钮样式*/
+.data>.btn>button{
+  text-align:center;
+  color: #fff;
+  background:#169BD5;
+}
+.btn1{
+	color:#000;
+}
+.data>.btn>.delete{
+  color:red;
+}
+.header>.import{
+	margin-left: 2.3rem;
+}
+input{
+	font-size:.16rem;
+}
+#small{
+	width:2rem;
+}
+
+/*公用蒙版*/
+.message{
+   position: absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  display: none;
+}
+.mark{
+  position: absolute;
+  width:100%;
+  height:250%;
+  top:0;
+  left:0;
+  background: rgba(255,255,255,.8);
+}
+.Mbg{
+	background:#fff;
+}
+.DBtn{
+	background:#168bd9;
+}
+
+/*时间轴样式*/
+.timeMove{
+		height:20px;
+		width:500px;
+		background:green;
+		border:1px solid;
+		position: relative;
+	}
+.span{
+	display: inline-block;
+	width:20px;
+	height:20px;
+	background:#168bd9;
+	position:absolute;
+	top:0;
+}
+.mar{
+	position: absolute;
+	top:0;
+	background:gray;
+	height:20px;
+	width:0;
+	text-align: center;
+}
+.pull,.spana{
+	left:0;
+}
+.pull2,.spanb{
+	right:0;
+}
+.pTime{width:500px;
+	display: flex;justify-content: space-between;
+}
+.deleteBtn{
+	background:#168bd9;
+	color: #fff;
+}
+

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<script type="text/javascript" src="./js/setFont.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/map.css">
+<link rel="stylesheet" type="text/css" href="./css/reset.css">
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
+ <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script> 
+ <script src="https://unpkg.com/vue@2.2.6/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<style type="text/css">
+  #load{
+    background: rgba(0,0,0,.02);
+  }
+</style>
+</head>
+  <body> 
+ 
+   <!-- 主页公共部分 -->
+   <div id="app">
+    <!-- 头部 -->
+    <div class="head">
+      <div class="logo">
+        <img src="../logo.png">
+      <span>利市通-工厂宝</span>
+      <div id='pre'>pre</div>
+      </div>
+      <div id="app5">
+        <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal"  style="position:absolute;top:0;right:.5rem">
+          <el-submenu index="1">
+            <template slot="title">用户名</template>
+            <el-menu-item index="1-1"><a href="#/0">修改密码</a></el-menu-item>
+            <el-menu-item index="1-2">退出</el-menu-item>
+          </el-submenu>
+      </el-menu>
+    </div>
+      
+    </div>
+    <!-- 内容区 -->
+    <div class="main">
+    <!-- 侧边导航栏 -->
+      <div class="side" id="app6" style="position: relative;">
+
+       <el-row class="tac" style="position:absolute;width:100%;">
+        <el-col :span="24">
+          <el-menu default-active="2" class="el-menu-vertical-demo"  theme="dark">
+            <el-submenu index="1">
+              <template slot="title">部门管理</template>      
+                <el-menu-item index="1-1"><a href="#/">部门列表</a></el-menu-item>
+            </el-submenu>
+           
+            <el-submenu index="2">
+              <template slot="title">员工管理</template>      
+              <el-menu-item index="2-1"><a href="#/3">员工列表</a></el-menu-item>
+           </el-submenu>
+
+            <el-submenu index="3">
+              <template slot="title">员工管理</template>      
+              <el-menu-item index="3-1"><a href="#/6">车间列表</a></el-menu-item>             
+            </el-submenu> 
+
+            <el-submenu index="4">
+              <template slot="title">机器管理</template>      
+              <el-menu-item index="4-1"><a href="#/8">机器列表</a></el-menu-item>
+              <el-menu-item index="4-2"><a href="#/10">机器任务列表</a></el-menu-item>
+            </el-submenu>
+
+            <el-submenu index="5">
+              <template slot="title">加工日报表</template>      
+              <el-menu-item index="5-1"><a href="#/11">加工日报列表</a></el-menu-item>
+            </el-submenu>
+
+            <el-submenu index="6">
+              <template slot="title">办公模块</template>      
+              <el-menu-item index="6-1"><a href="#/13">通知列表</a></el-menu-item>
+               <el-menu-item index="6-2"><a href="#/15">APP办公模块</a></el-menu-item>
+            </el-submenu>
+
+            <el-submenu index="7">
+              <template slot="title">系统设置</template>      
+              <a href="jsvascript:;"><el-menu-item index="7-1">修改公司信息</el-menu-item></a>              
+            </el-submenu>
+            </el-menu-item>
+          </el-menu>
+        </el-col>
+      </el-row>
+        
+      </div>
+      <!-- 主页内容 -->
+     <div id="app2">
+    <div class='header page' id="app4">
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item ><a href="http://localhost:8080/#/" >首页</a></el-breadcrumb-item>
+        <el-breadcrumb-item>修改公司信息</el-breadcrumb-item> 
+      </el-breadcrumb>
+        <h1>查看修改公司信息</h1>
+        <div id="load" style="padding-top:.3rem;border:1px solid rgba(247,238,214,1)">
+        <el-row style="margin:.5rem 0 0 2.3rem ;height:.5rem">
+	        <el-col :span="2">
+	          <span>公司名</span>
+	        </el-col>
+	        <el-col :span="12">
+	          <el-input  placeholder="深圳市利市通信息技术有限公司" id='company' style="margin-left:-.6rem"></el-input>
+			    </el-col>
+      </el-row>
+      <div class='image Modify' id="app3">
+      <el-row >
+	        <el-col :span="2">
+	        	<span>公司LOGO</span>
+	    	</el-col>
+	    	<el-col :span="12">
+           <el-upload class="avatar-uploader" action="https://jsonplaceholder.typicode.com/posts/" :show-file-list="false" :on-success="handleAvatarSuccess" >
+              <img v-if="imageUrl" :src="imageUrl" class="avatar" style="width:1rem;height:1rem;">
+              <i v-else class="el-icon-plus avatar-uploader-icon" style="width:1rem;height:1rem;line-height:1rem"></i>
+          </el-upload>       	
+			</el-col>
+		</el-row>
+         </div>
+         <el-row style="margin-left:2.3rem">
+	        <p class='notice enterprise'>
+	         <el-col :span="1"> 
+	         	<span>类型</span>
+	         </el-col>
+	         <el-col :span="12">
+	         	 <template>
+    				  <el-select v-model="value" placeholder="请选择" style="margin-left:-.1rem">
+    				    <el-option v-for="item in options" :label="item.label" :value="item.value" >
+    				    </el-option>
+    				  </el-select>
+    				</template>
+	         </el-col>         
+	        </p>
+        </el-row>
+
+          <div class="block" style="margin:.3rem 0 .3rem 2.1rem">        
+            <span class="demonstration">所属行业</span>         
+            <el-cascader expand-trigger="hover" :options="options2" v-model="selectedOptions2" @change="handleChange">
+            </el-cascader>
+          </div>
+        
+
+       <!--  公司地址 -->
+        <div class="Modityfy maps">
+           <div id="hd" class="barn clearfix"> 
+              <div id="myPageTop"> 
+              <a>*<span>公司</span></span></a>
+               <table> 
+                <tbody> 
+                 <tr style="position:absolute;visibility: hidden
+                 " class="tr-radio"> 
+                  <td> <label><input type="radio" name="searchType" value="keyword" checked="" />按关键字搜索</label> <label><input type="radio" name="searchType" value="coordinate" />按坐标搜索</label> <span id="txtSearchMessage" class="message hide"></span> </td> 
+                  <td> 坐标获取结果： <span id="copySuccessMessage" class="message hide">复制成功！</span> </td> 
+                 </tr> 
+                 <tr class="tr-text">
+                  <td id="limit"> 
+	                  <el-col :span="10">
+	                  	 <el-input v-model="input2"  placeholder="请输入公司名称" id="txtSearch"></el-input>
+	                   </el-col>
+	                   <el-col :span="9"  >
+	                  	 <el-input v-model="input3"  placeholder="请输入公司地址" id="smallPosition " ></el-input>
+	                   </el-col>
+	                   <el-col :span="5"  style="text-align: right;">
+	                  	 <el-button type="primary" id="btn-search">搜索</el-button>
+	                  </el-col>
+                  </td> 
+                  <td  style="position:absolute;visibility: hidden"> <input type="text" id="txtCoordinate" name="coordinate" readonly="" /> <a href="javascript:;" title="复制" class="picker-copy">复制</a> </td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+              </div> 
+             </div>
+        </div>
+        <div class='Modify adress long'>
+          <span>公司位置</span> 
+          <div style="border:2px solid #20a0ff; margin-left:.3rem; height:2rem; width:6.5rem;border-radius: 5px;" >
+            <div class="main_content">     
+             <div id="divCoordinate" class="" style="top: 301px; left: 1048px; display: block; position:absolute;visibility: hidden">
+              114.198557,22.750416
+             </div>
+             <!-- 地图2  -->             
+             <div id="myPage" style="visibility: hidden"> 
+              <div id="map" class="amap-container" style="position: relative; background: rgb(252, 249, 242); cursor: pointer;">
+               <div class="amap-maps"> 
+                <div class="amap-drags"> 
+                 <div class="amap-layers" style="transform: translateZ(0px); width:1920px"> 
+                  <canvas class="amap-layer" width="1920" height="713" style="position: absolute; z-index: 0; top: 0px; left: 0px; height: 713px; width: 1920px;"></canvas> 
+                  <canvas class="amap-labels" draggable="false" style="position: absolute; z-index: 99; height: 713px; width: 1920px; top: 0px; left: 0px;" width="1920" height="713"></canvas> 
+                  <div class="amap-markers" style="position: absolute; z-index: 120; top: 356px; left: 1920px;"></div> 
+                 </div> 
+                 <div class="amap-overlays"></div> 
+                </div> 
+               </div> 
+               <div style="display: none;"></div> 
+               <div class="amap-controls"> 
+                <div class="amap-overviewcontrol" style="width: 17px; height: 17px; visibility: visible;"> 
+                 <div class="amap-overview-main" style="width: 115px; height: 115px;"> 
+                  <div class="amap-overview-win" style="width: 60px; height: 22px; left: 28px; top: 47px; display: block;"></div> 
+                  <div class="amap-overview-win" style="width: 60px; height: 22px; left: 28px; top: 47px; display: block;"></div> 
+                 </div> 
+                 <div class="amap-overview-button" style="background-position: -40px -405px;"></div> 
+                </div> 
+                <div class="amap-toolbar" style="left: 10px; top: 10px; visibility: visible;"> 
+                 <div class="amap-pancontrol" style="position: relative; display: block;"> 
+                  <div class="amap-pan-left"></div> 
+                  <div class="amap-pan-top"></div> 
+                  <div class="amap-pan-right"></div> 
+                  <div class="amap-pan-bottom"></div> 
+                 </div> 
+                 <div class="amap-locate" style="position: relative; left: 17px; display: block;"></div> 
+                 <div class="amap-zoomcontrol" style="position: relative; left: 14px;"> 
+                  <div class="amap-zoom-plus"></div> 
+                  <div class="amap-zoom-ruler" style="display: block;"> 
+                   <div class="amap-zoom-mask" style="height: 73px;"></div> 
+                   <div class="amap-zoom-cursor" style="top: 73px;"></div> 
+                   <div class="amap-zoom-labels"> 
+                    <div class="amap-zoom-label-street"></div> 
+                    <div class="amap-zoom-label-city"></div> 
+                    <div class="amap-zoom-label-province"></div> 
+                    <div class="amap-zoom-label-country"></div> 
+                   </div> 
+                  </div> 
+                  <div class="amap-zoom-minus"></div> 
+                 </div> 
+                </div> 
+               </div>        
+           </div>
+          </div>
+          <!-- 地图1 -->
+          <div id="wrap" class="my-map" style="position: absolute;top:0">
+            <div id="mapContainer" ></div>
+          </div>
+        </div>    
+    </div>
+    </div>    
+    	<el-button type="primary" v-on:click="saveInformation" class="saveChange">保存修改</el-button>
+       <p style="text-align:right;margin:.5rem">Copyright © 2015 <a href="http://www.listome.com" style="color:#50bfff">工厂宝</a> 版权所有 深圳利市通信息技术有限公司 粤ICP备15087798号-1 </p>
+  </div>
+  </div>
+  <!-- 地图组件 --> 
+  <script src="http://mockjs.com/dist/mock.js"></script>
+  <script src="./js/maps.js"></script> 
+  <script type="text/javascript" src="./js/map.js"></script>
+  <script type="text/javascript">
+  var data1=Mock.mock("http://uploadInformation.cn",{
+    'data':[{company:'深圳市利市通信息技术有限公司',logoUrl:'blob:http://localhost:8080/889c0b3c-c01e-43b9-8b82-84c1fabcb1aa',type:'国有企业',industry:'制造业/机械加工' ,name:'利市通',desc:'燕川北部工业园',lnglat:{lng: 113.97539, lat: 22.675051}}]
+  });
+   var data2=Mock.mock("http://uploadInformation2.cn",{
+    'data':[{company:'深圳市利市通信息技术有限公司',logoUrl:'blob:http://localhost:8080/889c0b3c-c01e-43b9-8b82-84c1fabcb1aa',type:'国有企业',industry:'制造业/机械加工' ,name:'利市通',desc:'燕川北部工业园',lnglat:{lng: 113.97539, lat: 22.675051}}]
+  });
+
+  var Main=new Vue({
+    el:"#app5",
+    data(){
+      return {
+        activeIndex:"1"
+      }
+    }
+  })
+	var Main2=new Vue({
+		el:"#app4",
+	    data() {
+	      return {
+          imageUrl:'',
+	        input:"",
+	        input3:"",
+          input2:"",
+          options2: [{
+            value:"制造业",
+            label:"制造业",
+            children:[{
+              value:"机械加工",
+              label:"机械加工"
+            },
+            {
+              value:"塑料电子",
+              label:"塑料电子"
+            }]
+          },{
+            value:"计算机、IT",
+            label:"计算机、IT",
+            children:[{
+              value:"软件",
+              label:"软件"
+            },{
+              value:"互联网、APP",
+              label:"互联网、APP"
+            },{
+              value:"IDC",
+              label:"IDC"
+            }]
+          }],
+          selectedOptions2: [],
+
+	        options: [{
+	          value: '选项1',
+	          label: '国有企业'
+	        }, {
+	          value: '选项2',
+	          label: '合资企业'
+	        }, {
+	          value: '选项3',
+	          label: '民营企业'
+	        }, {
+	          value: '选项4',
+	          label: '外资企业'
+	        }],
+	        value: ''
+         
+	      };
+	    },
+        methods: {
+          handleAvatarSuccess(res, file) {
+            this.imageUrl = URL.createObjectURL(file.raw);
+          },
+          handleChange(value) {
+          // console.log(value);
+          },
+          saveInformation(){
+            var data2={company:$('#company').val(),logoUrl:this.imageUrl,type:this.value,industry:this.selectedOptions2,name:this.input2,desc:this.input3,lnglat:$("#txtCoordinate").val()}
+            $.ajax({
+              type:"POST",
+              url:"http://uploadInformation2.cn",
+              data:data2,
+              success:function(data1,status){
+                console.log(data1,status)
+              }
+            })
+          }
+        },
+        mounted:function(){
+          var vueThis=this;
+          $.ajax({
+            type:'GET',
+            url:'http://uploadInformation.cn',
+            success:function(data,status){
+              var data1=JSON.parse(data).data;
+              $("#company").val(data1.company);
+              vueThis.imageUrl=data1.logoUrl;
+              vueThis.value=data1.type;
+              vueThis.selectedOptions2=data1.industry;
+              vueThis.input2=data1.name;
+              vueThis.input3=data1.desc;
+            }
+          })
+        }
+	  })
+
+  var Main3=new Vue({
+    el:"#app6",
+    data(){
+      return {
+      }
+    }
+  })
+
+	
+  </script>
+ </body>
+</html>
+
+

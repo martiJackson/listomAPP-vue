@@ -1,0 +1,17 @@
+﻿
+
+
+.autoclass{width:625px;clear:both;position:absolute;z-index:999999;}
+.autobox{overflow: auto; width: 95%; border: 1px solid gray;display: none;background:#fff;}
+/* 从这里出发|到这里去|搜周边 */
+.iWindow{width:290px;padding:5px;font-size:12px;}
+.iBox{border:1px solid #ccc;margin:10px 0 0;width:290px;}
+.iBox ul {margin:0;padding:0;}
+.iBox ul li{float:left;width:96px;margin:0;list-style:none;border-bottom:1px solid #ccc;}
+.iBox ul li a{height:20px;line-height:20px;float:left;color:#333;text-decoration:none;width:98px;text-align:center;background:#eee;}
+.iBox ul li a:hover{background:#fff;font-weight:800;}
+#box1,#box2,#box3{display:none;clear:both;padding:5px;}
+.iWindow input,.iWindow button{margin:0;}
+.iWindow input{width:130px;}
+#box3 a{margin:0 5px 0 0;}
+#box3 img{border: 1px solid #ccc;padding: 2px;vertical-align: bottom;}
